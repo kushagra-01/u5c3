@@ -15,7 +15,7 @@ useEffect(()=>{
 axios.get(`http://localhost:8080/books${id}`).then((res)=>{
 
   console.log(res,"dbooksb")
-// setdb(data)
+setdb(res.data)
 
 }).catch((err)=>{navigate("*")})
 },[])
