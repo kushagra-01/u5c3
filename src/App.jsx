@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import { AllRoutes } from "./Routes/Routes";
 
 function App() {
   return (
     <div className="App">
-     <h1>gg7jjjjjjjjjjjjjjjjjjjj j jug</h1>
+      <AllRoutes />
     </div>
   );
 }
