@@ -38,11 +38,25 @@ grid-template-columns:300px 300px 300px;
 
      
       <h2 style={{ textAlign: "center" }}>Home</h2>
-      <SortAndFilterButtons
-        handleSort={
-          SortAndFilterButtons
-        }
-      />
+ 
+        
+        
+                <button className="sortByTitleAsc"onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>a.title-b.title)]))
+        })}>ascending</button>
+          <button  className="sortByTitleDesc" onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>b.title-a.title)]))
+        })}>descending</button>
+          <button  className="sortByPriceAsc" onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>a.price-b.price)]))
+        })}>ascen name</button>
+            <button  className="sortByPriceDesc" onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>b.price-a.price)]))
+        })}>ascen name</button>
+        
+        
+
+
 
       <Main className="mainContainer">
         {db.map((el)=>{
