@@ -11,6 +11,7 @@ export const AllRoutes = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/section/:section" element={<Section />} /> 
         <Route path="*" element={<NotFound />} />
         <Route path="/books/:id" element={<BookDetailsPage/>} />
         {/* <Route path="/books/:section" element={<BookDetailsPage/>} /> */}

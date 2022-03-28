@@ -22,6 +22,7 @@ setdb(data)
 },[])
 
 
+
   const Main = styled.div`
 display: grid;
 grid-gap: 30px;
@@ -30,17 +31,22 @@ grid-template-columns:300px 300px 300px;
   `;
 
   return (
+
+    
+
     <div className="homeContainer">
+
+     
       <h2 style={{ textAlign: "center" }}>Home</h2>
       <SortAndFilterButtons
         handleSort={
-          "give handleSort function to this component, that sorts books"
+          SortAndFilterButtons
         }
       />
 
       <Main className="mainContainer">
         {db.map((el)=>{
-       return <BookCard key={el.id} img={el.img} title={el.title} price={el.price}/>
+       return <BookCard id={el.id} img={el.img} title={el.title} price={el.price}/>
         })}
       </Main>
     </div>

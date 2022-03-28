@@ -1,4 +1,25 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { BookCard } from "../BookCard/BookCard";
+// import { SortAndFilterButtons } from "../SortAndFilterButtons/SortAndFilterButtons";
+
 export const SortAndFilterButtons = ({ handleSort }) => {
+
+  const [db,setdb]=useState([])
+
+  useEffect(()=>{
+    axios.get("http://localhost:8080/books").then(({data})=>{
+    
+    
+    setdb(data)
+    
+    })
+    },[])
+
+
+
   return (
     <div className="sortButtons">
       {/*
@@ -13,7 +34,26 @@ export const SortAndFilterButtons = ({ handleSort }) => {
         you received from Parent component, 
         and sort the data.
 
-      */}
+      */
+
+        <>
+                <button className="sortByTitleAsc"onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>a.title-b.title)]))
+        })}>ascending</button>
+          <button  className="sortByTitleDesc" onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>b.title-a.title)]))
+        })}>descending</button>
+          <button  className="sortByPriceAsc" onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>a.price-b.price)]))
+        })}>ascen name</button>
+            <button  className="sortByPriceDesc" onClick={(()=>{
+          return (setdb([...db.sort((a,b)=>b.price-a.price)]))
+        })}>ascen name</button>
+        
+        </>
+
+
+      }
     </div>
   );
 };

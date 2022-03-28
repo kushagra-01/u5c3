@@ -19,6 +19,7 @@ export const BookCard = ({ id, img, title, price }) => {
   // <YourStyledLink to={}>
   //    title, image price etc here
   // </YourStyledLink>
+  // console.log(id,title,price,"idd")
 
   return(
     <Link to ={`/books/${id}`}>

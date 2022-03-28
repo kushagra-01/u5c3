@@ -12,9 +12,9 @@ const [db,setdb]=useState([])
 
 
 useEffect(()=>{
-axios.get(`http://localhost:8080/books${id}`).then((res)=>{
+axios.get(`http://localhost:8080/books/${id}`).then((res)=>{
 
-  console.log(res,"dbooksb")
+  // console.log(res,"dbooksb")
 setdb(res.data)
 
 }).catch((err)=>{navigate("*")})
